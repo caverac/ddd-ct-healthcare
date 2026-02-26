@@ -7,12 +7,13 @@ title: Installation
 
 ## Prerequisites
 
-- **Node.js** >= 20.0.0
-- **Yarn 4** via Corepack (ships with Node 20+)
+- **Node.js** >= 25.0.0
+- **Yarn 4** via Corepack (`npm install -g corepack`)
 
 Enable Corepack if you haven't already:
 
 ```bash
+npm install -g corepack
 corepack enable
 ```
 
@@ -32,7 +33,7 @@ yarn workspaces foreach -Apt run build
 
 ## Test
 
-Run the full test suite (73 tests, 100% coverage):
+Run the full test suite (100% coverage):
 
 ```bash
 yarn test

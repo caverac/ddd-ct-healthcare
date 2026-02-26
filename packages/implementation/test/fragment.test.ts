@@ -98,6 +98,28 @@ describe('Fragment — Category of Keyed Fragments', () => {
       }
     })
 
+    it('canonical injection skips keys absent from colimit', () => {
+      const small = colimitFragments([credFrag], mergeValues) // only NPI-001
+      const injection = canonicalInjection(ehrFrag, small) // ehrFrag has NPI-001 + NPI-002
+
+      expect(injection.size).toBe(1)
+      expect(injection.has(0)).toBe(true) // NPI-001 mapped
+      expect(injection.has(1)).toBe(false) // NPI-002 not in colimit
+    })
+
+    it('mediating morphism skips colimit keys absent from target', () => {
+      const colimit = colimitFragments([ehrFrag, credFrag], mergeValues) // NPI-001, NPI-002
+      const target = fragment([
+        { key: 'NPI-001', value: { only: true } as Record<string, unknown> }
+      ])
+
+      const med = mediatingMorphism(colimit, target, [])
+
+      expect(med.size).toBe(1)
+      const npi001Idx = colimit.records.findIndex((r) => r.key === 'NPI-001')
+      expect(med.has(npi001Idx)).toBe(true)
+    })
+
     it('mediating morphism makes the triangle commute', () => {
       const colimit = colimitFragments([ehrFrag, credFrag], mergeValues)
 
