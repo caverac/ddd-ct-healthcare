@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# Caches
+.docusaurus/
+*.tsbuildinfo
+
+# Test coverage
+coverage/
+
+# Yarn
+.yarn/install-state.gz
+
+# OS
+.DS_Store
+
+# LaTeX auxiliaries
+*.aux
+*.log
+*.bbl
+*.blg
+*.out
+*.synctex.gz

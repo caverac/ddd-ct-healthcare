@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 7" refX="10" refY="3.5"
+            markerWidth="8" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 3.5 L 0 7 z" fill="#2dd4bf"/>
+    </marker>
+  </defs>
+
+  <!--
+    Node centers and radii:
+      Top:    (256, 105)  r=22
+      BL:     (140, 365)  r=22
+      BR:     (372, 365)  r=22
+      Center: (256, 256)  r=28
+
+    All line endpoints are computed at the circle edge
+    along the direction toward the connected node.
+  -->
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#0F172A" stroke="#0d9488" stroke-width="6"/>
+
+  <!-- Outer edges (between outer nodes, drawn first so arrows layer on top) -->
+  <!-- Top ↔ BL: unit ≈ (-0.407, 0.913) -->
+  <line x1="247" y1="125" x2="149" y2="345" stroke="#0d9488" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- Top ↔ BR: unit ≈ (0.407, 0.913) -->
+  <line x1="265" y1="125" x2="363" y2="345" stroke="#0d9488" stroke-width="2" stroke-opacity="0.5"/>
+  <!-- BL ↔ BR: horizontal -->
+  <line x1="162" y1="365" x2="350" y2="365" stroke="#0d9488" stroke-width="2" stroke-opacity="0.5"/>
+
+  <!-- Morphism arrows: each outer node → center -->
+  <!-- Top → Center: straight down, unit (0, 1) -->
+  <line x1="256" y1="127" x2="256" y2="228" stroke="#2dd4bf" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- BL → Center: unit ≈ (0.729, -0.685) -->
+  <line x1="156" y1="350" x2="236" y2="275" stroke="#2dd4bf" stroke-width="3" marker-end="url(#arrow)"/>
+  <!-- BR → Center: unit ≈ (-0.729, -0.685) -->
+  <line x1="356" y1="350" x2="276" y2="275" stroke="#2dd4bf" stroke-width="3" marker-end="url(#arrow)"/>
+
+  <!-- Outer nodes (three bounded contexts) -->
+  <circle cx="256" cy="105" r="22" fill="#0d9488" filter="url(#glow)"/>
+  <circle cx="140" cy="365" r="22" fill="#0d9488" filter="url(#glow)"/>
+  <circle cx="372" cy="365" r="22" fill="#0d9488" filter="url(#glow)"/>
+
+  <!-- Center node (colimit / Directory) -->
+  <circle cx="256" cy="256" r="28" fill="#2dd4bf" filter="url(#glow)"/>
+  <circle cx="256" cy="256" r="16" fill="#5eead4"/>
+
+  <!-- Labels -->
+  <text x="256" y="58" text-anchor="middle" fill="#5eead4" font-family="system-ui, sans-serif" font-size="22" font-weight="600">EHR</text>
+  <text x="100" y="415" text-anchor="middle" fill="#5eead4" font-family="system-ui, sans-serif" font-size="22" font-weight="600">Cred</text>
+  <text x="412" y="415" text-anchor="middle" fill="#5eead4" font-family="system-ui, sans-serif" font-size="22" font-weight="600">Contr</text>
+</svg>

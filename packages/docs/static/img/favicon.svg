@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="#0F172A" stroke="#0d9488" stroke-width="8"/>
+
+  <!-- Three converging arrows -->
+  <!-- Top arrow -->
+  <line x1="256" y1="80" x2="256" y2="220" stroke="#2dd4bf" stroke-width="8" stroke-linecap="round"/>
+  <!-- Bottom-left arrow -->
+  <line x1="104" y1="388" x2="222" y2="290" stroke="#2dd4bf" stroke-width="8" stroke-linecap="round"/>
+  <!-- Bottom-right arrow -->
+  <line x1="408" y1="388" x2="290" y2="290" stroke="#2dd4bf" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- Arrowheads (triangles pointing inward) -->
+  <polygon points="256,230 244,200 268,200" fill="#2dd4bf"/>
+  <polygon points="228,296 210,270 234,274" fill="#2dd4bf"/>
+  <polygon points="284,296 278,274 302,270" fill="#2dd4bf"/>
+
+  <!-- Center node -->
+  <circle cx="256" cy="268" r="40" fill="#2dd4bf" filter="url(#glow)"/>
+  <circle cx="256" cy="268" r="24" fill="#5eead4"/>
+</svg>
