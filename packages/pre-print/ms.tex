@@ -125,9 +125,9 @@ When schema mappings discard structural information, relationships are
 orphaned. As network updates arrive out of order, and as queries demand
 time-indexed correctness (e.g., ``Was this provider in-network
 yesterday?''), imperative integration scripts fail under the
-complexity. These are not engineering accidents to be
-patched with ad-hoc heuristics, but algebraic problems that demand a
-formal categorical semantics.
+complexity. These recurring failures suggest underlying structural
+problems that may benefit from formal treatment; this manuscript
+explores categorical semantics as one such approach.
 
 \paragraph{Contributions.}
 This manuscript makes five contributions:
@@ -1211,11 +1211,11 @@ Several directions extend this work:
 % ============================================================================
 
 Domain-Driven Design provides the linguistic boundaries needed to
-understand complex business requirements. Category theory supplies the
-missing algebra. This manuscript has demonstrated that the most challenging aspects
-of distributed directory architecture --- entity resolution, concurrent
+understand complex business requirements. Category theory offers one algebraic
+extension that can complement these boundaries. This manuscript has shown that several
+recurring challenges in distributed directory architecture --- entity resolution, concurrent
 updates, schema translation, temporal querying, and split-brain
-reconciliation --- can be replaced with formal categorical constructions
+reconciliation --- admit formal treatment via categorical constructions
 governed by universal properties.
 
 Specifically:
@@ -1239,9 +1239,9 @@ Specifically:
 \end{itemize}
 
 \noindent
-By adopting these categorical semantics and embodying them in typed
-functional libraries, architects can transition from writing heuristic
-integration logic to deriving architectures whose consistency properties
+Where applicable, adopting these categorical semantics and embodying them in typed
+functional libraries offers architects an alternative to heuristic
+integration logic --- one whose consistency properties
 are guaranteed by construction. The companion TypeScript implementation
 demonstrates that this transition is practical with existing tools.
 

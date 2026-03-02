@@ -6,13 +6,15 @@ title: Introduction
 
 # DDD + Category Theory for Healthcare
 
-Healthcare provider directories are broken. Studies consistently show **40%+ inaccuracy rates** in provider data — wrong addresses, stale credentials, phantom networks. Patients can't find doctors, claims are denied, and regulatory fines pile up.
+Healthcare provider directories suffer from well-documented data quality issues. Studies report **40%+ inaccuracy rates** in provider data — wrong addresses, stale credentials, phantom networks — leading to denied claims, patient frustration, and regulatory exposure.
 
-This project attacks the root cause: provider data is scattered across multiple bounded contexts (EHR systems, credentialing databases, contracting platforms, public directories) with no principled way to merge, synchronize, or query it.
+A key contributing factor is that provider data is scattered across multiple bounded contexts (EHR systems, credentialing databases, contracting platforms, public directories) with limited tooling for principled merging, synchronization, or querying.
 
-## The Five Structural Results
+This project explores one possible approach: applying category theory as a formal foundation for reasoning about these integration challenges. It is not the only way to tackle these problems, and it comes with its own trade-offs (see [Limitations](#limitations)), but it offers structural guarantees that ad-hoc approaches typically lack.
 
-We prove that category theory provides **exactly the right abstractions** for healthcare data integration. Each result maps a well-known categorical construction to a concrete infrastructure problem:
+## Five Structural Results
+
+We show that several well-known categorical constructions map naturally to concrete infrastructure problems in this domain:
 
 | #   | Problem                                                                                  | Categorical Tool                                        | Module                       |
 | --- | ---------------------------------------------------------------------------------------- | ------------------------------------------------------- | ---------------------------- |
@@ -27,6 +29,13 @@ We prove that category theory provides **exactly the right abstractions** for he
 - **`packages/implementation`** — TypeScript + fp-ts library implementing all five results with full test coverage
 - **`packages/pre-print`** — LaTeX manuscript with formal proofs and categorical diagrams
 - **`packages/docs`** — This documentation site
+
+## Limitations
+
+- **Learning curve** — Category theory introduces unfamiliar abstractions; teams without prior exposure will need ramp-up time.
+- **Scope** — The five results address structural integration problems (merging, translation, temporal consistency). They do not cover data entry errors at the source, organizational process failures, or incentive misalignment.
+- **Validation** — The implementation is a proof-of-concept project, not a production-hardened system. Real-world adoption would require significant engineering beyond what is shown here.
+- **Alternatives exist** — Master Data Management (MDM) platforms, probabilistic record linkage, and event-driven architectures address overlapping concerns with different trade-offs.
 
 ## Quick Links
 

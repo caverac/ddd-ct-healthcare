@@ -21,7 +21,7 @@ A natural transformation is a family of morphisms that converts one functor into
 
 ## Colimit
 
-A colimit is the universal way to glue objects together along shared structure. It generalizes unions, quotients, and merges. **In our project**, entity resolution is a colimit in $\mathbf{FinSet}/K$: fragments from different bounded contexts sharing the same NPI key are merged into a single golden record. The universal property guarantees this merge is unique and deterministic.
+A colimit is the universal way to glue objects together along shared structures. It generalizes unions, quotients, and merges. **In our project**, entity resolution is a colimit in $\mathbf{FinSet}/K$: fragments from different bounded contexts sharing the same NPI key are merged into a single golden record. The universal property guarantees this merge is unique and deterministic.
 
 ## Adjunction
 

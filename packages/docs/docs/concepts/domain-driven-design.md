@@ -32,7 +32,7 @@ A domain event captures something that happened in the domain. Our event types (
 
 ### Anti-Corruption Layer (ACL)
 
-An ACL translates between bounded contexts so that one context's model doesn't leak into another. In categorical terms, this is exactly the pullback functor Delta_F — it reindexes data along a schema morphism without creating dangling references.
+An ACL translates between bounded contexts so that one context's model doesn't leak into another. In categorical terms, this is exactly the pullback functor $\Delta_F$ — it reindexes data along a schema morphism without creating dangling references.
 
 ## The Integration Problem
 
