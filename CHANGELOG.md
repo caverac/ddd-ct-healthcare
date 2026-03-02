@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/caverac/ddd-ct-healthcare/compare/v1.0.1...v1.0.2) (2026-03-02)
+
+### Bug Fixes
+
+- **docs:** softened scope statements ([17babcb](https://github.com/caverac/ddd-ct-healthcare/commit/17babcbc4d34cbcc31756027226c1a69e361669e))
+
 ## [1.0.1](https://github.com/caverac/ddd-ct-healthcare/compare/v1.0.0...v1.0.1) (2026-02-26)
 
 ### Bug Fixes
