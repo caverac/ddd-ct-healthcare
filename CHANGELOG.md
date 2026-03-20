@@ -1,3 +1,9 @@
+# [1.1.0](https://github.com/caverac/ddd-ct-healthcare/compare/v1.0.2...v1.1.0) (2026-03-20)
+
+### Features
+
+- **packages:** added cql package ([495eb70](https://github.com/caverac/ddd-ct-healthcare/commit/495eb70690f08320b6347d93b7da049d5198527a))
+
 ## [1.0.2](https://github.com/caverac/ddd-ct-healthcare/compare/v1.0.1...v1.0.2) (2026-03-02)
 
 ### Bug Fixes
